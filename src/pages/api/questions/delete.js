@@ -1,10 +1,10 @@
-import connectMongo from "../../../../../lib/connectMongo";
-import Progresses from "../../../../../models/Progresses";
+import connectMongo from "../../../../lib/connectMongo";
+import Progresses from "../../../../models/Progresses";
 
 export default async function deleteProgress(req, res) {
   try {
     await connectMongo();
-    const id = req.query.id;
+    const { id } = req.query;
     if (!id) {
       throw new Error("id parameter is missing");
     }
