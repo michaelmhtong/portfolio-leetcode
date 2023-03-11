@@ -1,12 +1,12 @@
 import mongoose from "mongoose";
 
 const progressesSchema = new mongoose.Schema({
-  userID: String,
+  userId: String,
   status: {
     type: Boolean,
     default: false,
   },
-  problemID: String,
+  problemId: String,
   title: String,
   url: String,
   topics: Array,
