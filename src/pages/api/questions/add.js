@@ -1,12 +1,14 @@
-import connectMongo from "../../../../lib/mongodb";
+import connectMongo from "../../../../lib/connectMongo";
 import Progresses from "../../../../models/Progresses";
 
 export default async function addProgress(req, res) {
   try {
     await connectMongo();
-    const { title, url, topic, id, difficulty } = req.body.question;
+    const { title, url, topic, id, difficulty, userId } = req.body;
+    console.log("userId", userId)
     const progress = new Progresses({
-      problemID: id,
+      userId: userId,
+      problemId: id,
       title: title,
       topics: topic,
       url: url,

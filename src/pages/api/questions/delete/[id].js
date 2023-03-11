@@ -1,4 +1,4 @@
-import connectMongo from "../../../../../lib/mongodb";
+import connectMongo from "../../../../../lib/connectMongo";
 import Progresses from "../../../../../models/Progresses";
 
 export default async function deleteProgress(req, res) {
