@@ -1,11 +1,7 @@
 import React from "react";
-import { useRouter } from "next/router";
 import QuestionGroups from "../../data/QuestionGroup.json";
 
-const QuestionCard = () => {
-  const router = useRouter();
-  const questionId = router.query.id;
-
+const QuestionCard = ({ questionId }) => {
   let questionData = null;
   // Loop through the values of QuestionGroups and search for the question data object that matches the ID
   for (const questions of Object.values(QuestionGroups)) {
