@@ -1,6 +1,9 @@
+import GoogleAuth from "@/components/Auth/GoogleAuth";
 import Head from "next/head";
+import { getSession } from "next-auth/react";
 
-export default function Home() {
+export default function Home({ session }) {
+  console.log(session)
   return (
     <>
       <Head>
@@ -11,7 +14,23 @@ export default function Home() {
       </Head>
       <main>
         <div>Start</div>
+        <GoogleAuth />
       </main>
     </>
   );
+}
+
+export async function getServerSideProps(content) {
+  const session = await getSession(content);
+  if (!session) {
+    return {
+      props: {},
+      // redirect: {
+      //   destination: "/",
+      // },
+    };
+  }
+  return {
+    props: { session },
+  };
 }
