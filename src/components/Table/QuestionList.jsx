@@ -1,6 +1,7 @@
+import useSessionHook from "@/hooks/sessionHook";
 import React from "react";
-import QuestionGroups from "../data/QuestionGroup.json";
-import AddProgressButton from "./Button/AddProgressButton";
+import QuestionGroups from "../../data/QuestionGroup.json";
+import AddProgressButton from "../Button/AddProgressButton";
 
 function DifficultyLabel({ difficulty }) {
   return (
@@ -20,6 +21,9 @@ function DifficultyLabel({ difficulty }) {
 }
 
 const QuestionList = () => {
+  const session = useSessionHook();
+  const userId = session?.user.id
+
   return (
     <div className="padding-vert--lg">
       {Object.entries(QuestionGroups).map(([sectionTitle, questions], index) => (
@@ -49,7 +53,7 @@ const QuestionList = () => {
                   </td>
                   <td>{question.duration} mins</td>
                   <td>
-                    <AddProgressButton question={question} />
+                    {session && <AddProgressButton question={question} userId={userId} />}
                   </td>
                 </tr>
               ))}
