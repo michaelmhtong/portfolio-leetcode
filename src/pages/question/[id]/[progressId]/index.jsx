@@ -10,7 +10,7 @@ import Heading from "@/components/Heading/Heading";
 import QuestionGroups from "@/data/QuestionGroup.json";
 
 
-const timer = () => {
+const TimerPage = () => {
   const router = useRouter();
   const questionId = router.query.id;
   const progressId = router.query.progressId;
@@ -126,4 +126,4 @@ const timer = () => {
   );
 };
 
-export default timer;
+export default TimerPage;

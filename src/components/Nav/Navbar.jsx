@@ -17,11 +17,14 @@ const Navbar = () => {
   return (
     <>
       <header className="absolute inset-x-0 top-0 z-50">
-        <nav className="flex items-center justify-between p-6 lg:px-36 xl:px-60" aria-label="Global">
+        <nav
+          className="flex items-center justify-between p-6 lg:px-36 xl:px-60"
+          aria-label="Global"
+        >
           <div className="flex lg:flex-1">
             <Link href="/" className="-m-1.5 p-1.5">
-              <span className="sr-only">Let's code</span>
-              <Image src="/logo.png" width="40" height="40" />
+              <span className="sr-only">Let&apos;s code</span>
+              <Image src="/logo.png" width="40" height="40" alt="logo" />
             </Link>
           </div>
           <div className="flex lg:hidden">
@@ -55,7 +58,7 @@ const Navbar = () => {
           <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div className="flex items-center justify-between">
               <a href="#" className="-m-1.5 p-1.5">
-                <span className="sr-only">Let's code</span>
+                <span className="sr-only">Let&apos;s code</span>
                 <Image src="/logo.png" width="40" height="40" />
               </a>
               <button

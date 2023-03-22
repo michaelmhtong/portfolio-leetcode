@@ -7,7 +7,7 @@ export default function Home({ session }) {
   return (
     <>
       <Head>
-        <title>Let's code</title>
+        <title>Let&apos;s code</title>
         <meta
           name="description"
           content="Ace your next coding challenge. Get top-notch Leetcode training on our platform and stay ahead of the competition."

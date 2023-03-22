@@ -1,10 +1,10 @@
-import CompeleteModal from "@/components/Form/CompeleteForm";
 import React from "react";
 import { useRouter } from "next/router";
+import CompeleteModal from "@/components/Form/CompeleteForm";
 import { Container } from "@/components/Container/Container";
 import Heading from "@/components/Heading/Heading";
 
-const finish = () => {
+const FinishPage = () => {
   const router = useRouter();
   const questionId = router.query.id;
   const progressId = router.query.progressId;
@@ -19,4 +19,4 @@ const finish = () => {
   );
 };
 
-export default finish;
+export default FinishPage;

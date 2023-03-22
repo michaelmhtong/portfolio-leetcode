@@ -4,10 +4,8 @@ import QuestionGroups from "../../data/QuestionGroup.json";
 import QuestionList from "@/components/Table/QuestionList";
 import { Container } from "@/components/Container/Container";
 import Heading from "@/components/Heading/Heading";
-// import { Box, FormControl, InputLabel, Select, MenuItem, Grid } from "@mui/material";
-// import { Card, CardContent, Typography } from "@mui/material";
 
-const index = () => {
+const SuggestionPage = () => {
   const router = useRouter();
   let group = router.query.group || "week";
   const [groupData, setGroupData] = useState({});
@@ -66,4 +64,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default SuggestionPage;

@@ -8,7 +8,7 @@ const Hero = () => {
         <div className="hidden sm:mb-8 sm:flex sm:justify-center"></div>
         <div className="text-center">
           <h1 className="text-4xl font-bold tracking-wide text-gray-900 sm:text-6xl ">
-            LET'S CODE
+            LET&apos;S CODE
           </h1>
           <div className="mt-6 text-lg leading-8 text-gray-600">
             <p>Ace your next coding challenge.</p>

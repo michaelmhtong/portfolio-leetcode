@@ -4,7 +4,7 @@ import { Container } from "@/components/Container/Container";
 import Heading from "@/components/Heading/Heading";
 import { getSession } from "next-auth/react";
 
-const index = () => {
+const ProgressPage = () => {
   return (
     <>
       <Container>
@@ -15,7 +15,7 @@ const index = () => {
   );
 };
 
-export default index;
+export default ProgressPage;
 
 export async function getServerSideProps(content) {
   const session = await getSession(content);
