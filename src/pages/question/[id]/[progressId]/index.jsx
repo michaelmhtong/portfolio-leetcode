@@ -29,7 +29,7 @@ const TimerPage = () => {
     const newIntervalId = setInterval(() => {
       setSecondsLeft((prevSecondsLeft) => {
         if (prevSecondsLeft > 0) {
-          return prevSecondsLeft - 60; // run the timer if secondsLeft >0
+          return prevSecondsLeft - 1; // run the timer if secondsLeft >0
         } else {
           // if secondsLeft <=0
           clearInterval(newIntervalId);
