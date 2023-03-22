@@ -24,12 +24,12 @@ export default function Home({ session }) {
 
 export async function getServerSideProps(content) {
   const session = await getSession(content);
-  if (!session) {
+  if (session) {
     return {
       props: {},
-      // redirect: {
-      //   destination: "/",
-      // },
+      redirect: {
+        destination: "/progress",
+      },
     };
   }
   return {

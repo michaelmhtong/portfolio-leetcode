@@ -2,6 +2,7 @@ import React from "react";
 import ProgressList from "@/components/Table/ProgressList";
 import { Container } from "@/components/Container/Container";
 import Heading from "@/components/Heading/Heading";
+import { getSession } from "next-auth/react";
 
 const index = () => {
   return (
@@ -15,3 +16,18 @@ const index = () => {
 };
 
 export default index;
+
+export async function getServerSideProps(content) {
+  const session = await getSession(content);
+  if (!session) {
+    return {
+      props: {},
+      redirect: {
+        destination: "/",
+      },
+    };
+  }
+  return {
+    props: { session },
+  };
+}
