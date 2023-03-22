@@ -1,12 +1,16 @@
-import ProgressList from "@/components/Table/ProgressList";
 import React from "react";
+import ProgressList from "@/components/Table/ProgressList";
+import { Container } from "@/components/Container/Container";
+import Heading from "@/components/Heading/Heading";
 
 const index = () => {
   return (
-    <div>
-      <h1>Progress</h1>
-      <ProgressList />
-    </div>
+    <>
+      <Container>
+        <Heading heading="Progress" subheading="View and edit your progress here" />
+        <ProgressList />
+      </Container>
+    </>
   );
 };
 
