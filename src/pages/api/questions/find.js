@@ -5,8 +5,8 @@ export default async function getProgress(req, res) {
   try {
     await connectMongo();
     const { userId } = req.query;
-    const progresses = await Progresses.find({ userId });
-    res.json({ progresses });
+    const progresses = await Progresses.find({ userId }).sort({ date: -1 });
+    res.json(progresses);
   } catch (error) {
     console.log(error);
     res.json({ error });
