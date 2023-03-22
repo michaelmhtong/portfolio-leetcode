@@ -1,31 +1,39 @@
 import React from "react";
-import QuestionGroups from "../../data/QuestionGroup.json";
 
-const QuestionCard = ({ questionId }) => {
-  let questionData = null;
-  // Loop through the values of QuestionGroups and search for the question data object that matches the ID
-  for (const questions of Object.values(QuestionGroups)) {
-    questionData = questions.find((item) => item.id === Number(questionId));
-
-    if (questionData) {
-      break;
-    }
-  }
-
-  if (!questionData) {
-    return <div>Loading...</div>;
-  }
-
+const QuestionCard = ({ data }) => {
   return (
-    <div>
-      <h1>
-        <a href={questionData.url}>{questionData.title} Timer</a>
-      </h1>
-      <p>Duration: {questionData.duration} minutes</p>
-      <p>Difficulty: {questionData.difficulty}</p>
-      <p>Topic: {questionData.topic}</p>
-      <p>Routines: {questionData.routines.join(", ")}</p>
-    </div>
+    data && (
+      <div className="bg-gray-50 p-10 rounded-3xl">
+        <article className="flex max-w-xl flex-col items-start justify-between">
+          <div className="group relative">
+            <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
+              <a href={data.url}>{data.title}</a>
+              <span className="relative ml-4 text-sm rounded-full bg-gray-200 py-1.5 px-3 font-medium text-gray-600">
+                {data.topic}
+              </span>
+            </h3>
+            <div className="mt-5 border-t border-gray-200 text-gray-600">
+              <dl className="sm:divide-y sm:divide-gray-200">
+                <div className="py-2 sm:grid sm:grid-cols-3 sm:gap-4">
+                  <dt className="text-sm font-medium ">Suggested duration</dt>
+                  <dd className="mt-1 text-sm sm:mt-0 sm:col-span-2">{data.duration} minutes</dd>
+                </div>
+                <div className="py-2 sm:grid sm:grid-cols-3 sm:gap-4">
+                  <dt className="text-sm font-medium ">Difficulty</dt>
+                  <dd className="mt-1 text-sm sm:mt-0 sm:col-span-2">
+                    {data.difficulty.toLowerCase()}
+                  </dd>
+                </div>
+                <div className="py-2 sm:grid sm:grid-cols-3 sm:gap-4">
+                  <dt className="text-sm font-medium ">Routines</dt>
+                  <dd className="mt-1 text-sm sm:mt-0 sm:col-span-2">{data.routines.join(", ")}</dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </article>
+      </div>
+    )
   );
 };
 
