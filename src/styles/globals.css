@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -8,4 +12,10 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+}
+.borderRadius {
+  border-radius: 6px;
+}
+.roundedCircle {
+  border-radius: 100%;
 }
