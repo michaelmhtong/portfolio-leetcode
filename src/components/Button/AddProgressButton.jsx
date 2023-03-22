@@ -1,7 +1,7 @@
 import React from "react";
 import { publicRequest } from "@/hooks/requestMethods";
 import { useRouter } from "next/router";
-import { HiDocumentAdd } from "react-icons/hi";
+import { HiOutlineDocumentAdd } from "react-icons/hi";
 
 const AddProgressButton = ({ question, userId }) => {
   const router = useRouter();
@@ -20,8 +20,9 @@ const AddProgressButton = ({ question, userId }) => {
     try {
       redirectWebsite();
       const res = await publicRequest.post("/questions/add", item);
+      const progressId = res.data.progress._id;
       // Navigate to timer page
-      router.push(`/question/${question.id}/timer`);
+      router.push(`/question/${question.id}/${progressId}`);
     } catch (error) {
       console.log(error);
     }
@@ -33,7 +34,7 @@ const AddProgressButton = ({ question, userId }) => {
         addHandle(questionWithUserId);
       }}
     >
-      <HiDocumentAdd className="text-gray-900" />
+      <HiOutlineDocumentAdd className="text-gray-900 w-5 h-5" />
     </button>
   );
 };
