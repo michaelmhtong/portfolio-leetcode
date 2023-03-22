@@ -10,12 +10,12 @@ const Hero = () => {
           <h1 className="text-4xl font-bold tracking-wide text-gray-900 sm:text-6xl ">
             LET'S CODE
           </h1>
-          <p className="mt-6 text-lg leading-8 text-gray-600">
-            <p></p> Ace your next coding challenge.
+          <div className="mt-6 text-lg leading-8 text-gray-600">
+            <p>Ace your next coding challenge.</p>
             <p>
               Get top-notch Leetcode training on our platform and stay ahead of the competition.
             </p>
-          </p>
+          </div>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <GoogleAuth />
           </div>
