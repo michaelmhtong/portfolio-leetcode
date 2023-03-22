@@ -7,10 +7,7 @@ const progressesSchema = new mongoose.Schema({
     default: false,
   },
   problemId: String,
-  title: String,
-  url: String,
-  topics: Array,
-  difficulty: String,
+  usedTime: Number,
   date: {
     type: Date,
     default: Date.now,
