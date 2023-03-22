@@ -27,7 +27,7 @@ const TimeModal = ({ open, handleClose, questionId, progressId, spentMinutes }) 
         title="Complete"
         description="Do you have enough time to finish it?"
         button={
-          <Button className="sm:col-start-2" onClick={() => handleComplete}>
+          <Button className="sm:col-start-2" onClick={handleComplete}>
             Complete
           </Button>
         }
