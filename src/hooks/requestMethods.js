@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "https://portfolio-leetcode-michael07200.vercel.app/api/";
+const BASE_URL = "https://leetcode.mhtong.tech/api/";
 
 // const user = JSON.parse(localStorage.getItem("persist:root"))?.user;
 // const currentUser = user && JSON.parse(user).currentUser;
